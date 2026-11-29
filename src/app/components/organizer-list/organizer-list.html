@@ -1,0 +1,66 @@
+
+<section class="container my-5" id="organisateurs">
+
+  <h2 class="text-center fw-bold mb-2"
+      style="color: #102B50;">
+    Nos Organisateurs ({{ organizers.length }})
+  </h2>
+
+  <p class="text-center text-muted mb-4">
+    Découvrez les organisateurs de nos conférences.
+  </p>
+
+  <div class="row g-4 justify-content-center">
+
+    @for (organizer of organizers; track organizer.id) {
+
+      <div class="col-12 col-md-6 col-lg-4">
+
+        <div class="card h-100 shadow-sm border-0">
+
+          <div class="card-body text-center p-4">
+
+            <!-- Photo -->
+            <img
+              [src]="organizer.picture"
+              [alt]="organizer.name"
+              class="rounded-circle mb-3"
+              width="110"
+              height="110"
+              style="object-fit: cover;">
+
+            <!-- Nom -->
+            <h5 class="fw-bold mb-2"
+                style="color: #102B50;">
+              {{ organizer.name }}
+            </h5>
+
+            <!-- Université -->
+            <p class="text-muted mb-2">
+              {{ organizer.university }}
+            </p>
+
+            <!-- Email -->
+            <a
+              [href]="'mailto:' + organizer.email"
+              class="text-decoration-none"
+              style="color: #244B7A;">
+              {{ organizer.email }}
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    } @empty {
+
+      <p class="text-center text-muted">
+        Aucun organisateur disponible
+      </p>
+
+    }
+
+  </div>
+</section>

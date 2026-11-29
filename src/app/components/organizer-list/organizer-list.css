@@ -1,0 +1,12 @@
+.card {
+  border-radius: 14px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  border: 3px solid #dce8fa;
+}
